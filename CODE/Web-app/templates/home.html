@@ -1,0 +1,33 @@
+<!doctype html>
+<html style="background-color: dimgrey;">
+<head>
+    <title>Car Price Predictor</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css"> 
+    <!-- {{ url_for('static', filename='./style.css')}} -->
+</head>
+<body>
+  <form action="{{ url_for('predict')}}" method="post">
+    <h1> Predict Car Price</h1>
+      <div class="formcontainer">
+      <hr/>
+      <div class="container">
+                <input type="text" name="year" placeholder="Year" required="required" /><br>
+                <input type="text" name="make" placeholder="Make" required="required" /><br>
+                <input type="text" name="model" placeholder="Model" required="required" /><br>
+                <input type="text" name="color" placeholder="Color" required="required" /><br>
+                <input type="text" name="mileage" placeholder="Mileage" required="required" /><br>
+    
+      </div>
+      <div> 
+        <p> {{pred}} </p>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict </button>
+    </form>
+    <form action="{{ url_for('home')}}" style="border: 0" >
+      <button type="submit" class="btn btn-primary btn-block btn-small" style="background-color:crimson"> Reset Form </button>
+  </form>
+  </body>
+</html>
